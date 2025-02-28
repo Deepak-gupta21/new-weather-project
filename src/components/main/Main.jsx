@@ -15,7 +15,7 @@ export default function Main({ weather, error }) {
       <div className="contain">
 
       {error && <p style={{ color: "red" }}>{error}</p>}
-        {weather && (
+      {weather ? (
           <>
             <div className="left">
               <h1>Weather in {weather?.location?.name}</h1>
@@ -50,8 +50,13 @@ export default function Main({ weather, error }) {
 
             
           </>
+        ) : (
+          <p>No weather data available</p>
         )}
       </div>
 
   );
 }
+
+
+

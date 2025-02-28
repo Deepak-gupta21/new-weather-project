@@ -16,7 +16,7 @@ export default function Header() {
 
     const apiKey = "2599bed34cf9412a8e3125312252702";
 
-    const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=yes`;
+    const url = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=yes`;
 
     try {
       const response = await fetch(url);
@@ -47,8 +47,9 @@ export default function Header() {
         ></input>
         <button onClick={fetchWeather}  className="header-btn">Get weather !</button>
       </div>
-
-      <Main weather={weather} error={error} />
+      
+      {!error && <Main weather={weather} error={error} />} 
+     
     </>
   );
 }
