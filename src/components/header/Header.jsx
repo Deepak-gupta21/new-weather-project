@@ -16,7 +16,7 @@ export default function Header() {
 
     const apiKey = "2599bed34cf9412a8e3125312252702";
 
-    const url = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=yes`;
+    const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=yes`;
 
     try {
       const response = await fetch(url);
